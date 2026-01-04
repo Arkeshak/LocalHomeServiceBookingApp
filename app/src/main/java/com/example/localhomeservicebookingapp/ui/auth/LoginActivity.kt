@@ -1,16 +1,46 @@
 package com.example.localhomeservicebookingapp.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.localhomeservicebookingapp.R
+import com.example.localhomeservicebookingapp.ui.customer.CustomerHomeActivity
+import com.example.localhomeservicebookingapp.ui.auth.RegisterActivity
 
-class LoginActivity : ComponentActivity() {
+class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            // A simple placeholder for your login screen UI
-            Text("This is the Login Screen")
+        setContentView(R.layout.activity_login)
+
+        val etEmail = findViewById<EditText>(R.id.etEmail)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+
+        btnLogin.setOnClickListener {
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                // TEMP login logic (client-safe)
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, CustomerHomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
+
+        tvRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
     }
 }
