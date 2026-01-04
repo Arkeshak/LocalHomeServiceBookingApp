@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import com.example.localhomeservicebookingapp.ui.auth.LoginActivity // ✅ Ensure this import is present
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,11 +14,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             Button(onClick = {
-                startActivity(
-                    Intent(this,
-                        com.example.localhomeservicebookingapp.ui.auth.LoginActivity::class.java
-                    )
-                )
+                // The reference here should now be resolved correctly
+                startActivity(Intent(this, LoginActivity::class.java))
             }) {
                 Text("Go to Login")
             }
