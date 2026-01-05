@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.localhomeservicebookingapp.R
 import com.example.localhomeservicebookingapp.ui.customer.CustomerHomeActivity
-import com.example.localhomeservicebookingapp.ui.auth.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -39,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         tvRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterSelectionActivity::class.java))
         }
 
     }

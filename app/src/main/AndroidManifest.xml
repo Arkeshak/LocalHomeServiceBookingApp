@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.auth.CustomerRegisterActivity" />
+        <activity android:name=".ui.auth.WorkerRegisterActivity" />
 
-        <activity android:name=".ui.auth.RegisterActivity" />
+        <activity android:name=".ui.auth.RegisterSelectionActivity" />
         <activity android:name=".ui.customer.CustomerHomeActivity" />
         <activity android:name=".ui.customer.CustomerDashboardActivity" />
         <activity android:name=".ui.customer.CustomerBookingsActivity" />
